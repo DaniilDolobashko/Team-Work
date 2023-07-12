@@ -10,10 +10,37 @@ typedef struct {
     float price, memory;
 } Product;
 
-void addToCart(Product* product, int quantity, float* total) {
+typedef struct {
+    Product product;
+    int quantity;
+} CartItem;
+
+void addToCart(Product* product, int quantity, CartItem* cart, int* cartSize) {
+    cart[*cartSize].product = *product;
+    cart[*cartSize].quantity = quantity;
+    (*cartSize)++;
+    printf("Товар додано до корзини.\n");
+}
+
+void addSumCart(Product* product, int quantity, float* total) {
     float itemTotal = product->price * quantity;
     *total += itemTotal;
-    printf("Товар додано до корзини.\n");
+    printf("Товар додано до корзини. Загальна вартість: %.2f\n", *total);
+}
+
+void displayCart(CartItem* cart, int cartSize) {
+    if (cartSize == 0) {
+        printf("Корзина порожня.\n");
+        return;
+    }
+
+    printf("Товари у корзині:\n");
+    for (int i = 0; i < cartSize; i++) {
+        printf("Товар: %s\n", cart[i].product.name);
+        printf("Ціна: %.2f\n", cart[i].product.price);
+        printf("Кількість: %d\n", cart[i].quantity);
+        printf("-----------------------------\n");
+    }
 }
 
 void listProducts(Product* inventory, int count) {
@@ -63,6 +90,8 @@ int main() {
     inventory[0].memory = 128;
     inventory[4].price = 250.0;
 
+    CartItem cart[10];
+    int cartSize = 0; 
     int choice;
     float total = 0.0;
     char surname[20], name[20], middleName[20], sex[10], mail[100];
@@ -110,7 +139,15 @@ int main() {
                 int found = 0;
                 for (int i = 0; i < count; i++) {
                     if (inventory[i].id == productId) {
-                        addToCart(&inventory[i], quantity, &total);
+                        addToCart(&inventory[i], quantity, cart, &cartSize);
+                        found = 1;
+                        break;
+                    }
+                }
+                
+                for (int i = 0; i < count; i++) {
+                    if (inventory[i].id == productId) {
+                        addSumCart(&inventory[i], quantity, &total);
                         found = 1;
                         break;
                     }
@@ -121,6 +158,7 @@ int main() {
                 }
                 break;
             case 3:
+                displayCart(cart, cartSize);
                 printf("Загальна вартість корзини: %.2f\n", total);
                 break;
             case 4:
