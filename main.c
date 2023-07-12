@@ -6,4 +6,3 @@ int main()
     printf("Hello world!\n");
     return 0;
 }
-проарп аорп аорп аор поар пораопр аор п
