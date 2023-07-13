@@ -165,8 +165,9 @@ inventoryOfPowerBank[0].price = 80.0;
 
 
 CartItem cart[10];
-int cartSize = 0; 
-int choice, choiceOfCategory, deliveryChoice, deliveryTime, department;
+int cartSize = 0;
+int totalPlusDelivery = 0;
+int choice, choiceOfCategory, deliveryChoice, deliveryTime, department, payChoice, cardCVV, cardNumber, cardDate;
 float total = 0.0;
 char surname[20], name[20], middleName[20], sex[10], mail[100], deliveryAdress[100];
 
@@ -302,24 +303,129 @@ switch (deliveryChoice) {
                     printf("Наш магазин знаходиться в Києві за адресою: Сагайдачного вул., 51.\n");
                     printf("Графік роботи: Пн-Пт - 10:00-18:00\n");
                     printf("Ви можете забрати ваш товар починаючи з наступного робочого дня!\n");
-                    break;
+                    
+                    
+                    printf("\nДо сплати: %d\n", total);
+                    printf("Оберіть метод оплати:\n");
+printf("1 - Оплата при отриманні\n");
+printf("2 - Оплатити онлайн\n");
+scanf("%d", &payChoice);
+                    switch (payChoice) {
+    case 1:
+        printf("Добре, очікуємо вас в нашому магазині!\n");
+        break;
+    case 2:
+        printf("Будь ласка, введіть дані вашої картки.\n");
+        printf("Номер:\n");
+        scanf("%d", &cardNumber);
+        printf("Термін дії (впишіть у наступному форматі: XXXX):\n");
+        scanf("%d", &cardDate);
+        printf("CVV:\n");
+        scanf("%d", &cardCVV);
+        printf("Оплачено! Чекаємо на Вас у нашому магазині!\n");
+        break;
+    default:
+        printf("Невірне значення. \n");
+        break;
+}                  
+break;
                 case 2:
                     printf("Ведіть адресу доставки:\n");
                     scanf("%s", &deliveryAdress);
                     printf("О котрій годині завтра вам буде зручно отримати замовлення?\n");
                     scanf("%d", &deliveryTime);
                     printf("Очійкуйте нашого кур'єра завтра близько %d години\n", deliveryTime);
-                    break;
+
+                    totalPlusDelivery = total+100;
+                    printf("\nДо сплати: %d\n", totalPlusDelivery);
+                    printf("Оберіть метод оплати:\n");
+printf("1 - Оплата при отриманні\n");
+printf("2 - Оплатити онлайн\n");
+scanf("%d", &payChoice);
+                    switch (payChoice) {
+    case 1:
+        printf("Добре, очікуйте на нашого кур'єра!\n");
+        break;
+    case 2:
+        printf("Будь ласка, введіть дані вашої картки.\n");
+        printf("Номер:\n");
+        scanf("%d", &cardNumber);
+        printf("Термін дії:\n");
+        scanf("%d", &cardDate);
+        printf("CVV:\n");
+        scanf("%d", &cardCVV);
+        printf("Оплачено! Очікуйте на нашого кур'єра!\n");
+        break;
+    default:
+        printf("Невірне значення. \n");
+        break;
+}           
+break;
+
+                    
     case 3:
         printf("Введіть номер відділення:\n");
         scanf("%d", &department);
         printf("Очікуйте ваше замовлення в %d відділенні!\n", department);
+        
+         totalPlusDelivery = total+80;
+                    printf("\nДо сплати: %d\n", totalPlusDelivery);
+                    printf("Оберіть метод оплати:\n");
+printf("1 - Оплата при отриманні\n");
+printf("2 - Оплатити онлайн\n");
+scanf("%d", &payChoice);
+                    switch (payChoice) {
+    case 1:
+        printf("Добре, очікуйте на доставку!\n");
         break;
+    case 2:
+        printf("Будь ласка, введіть дані вашої картки.\n");
+        printf("Номер:\n");
+        scanf("%d", &cardNumber);
+        printf("Термін дії:\n");
+        scanf("%d", &cardDate);
+        printf("CVV:\n");
+        scanf("%d", &cardCVV);
+        printf("Оплачено! Очікуйте на доставку!\n");
+        break;
+    default:
+        printf("Невірне значення. \n");
+        break;
+}     
+break;
+
+
     case 4:
         printf("Введіть номер відділення:\n");
         scanf("%d", &department);
         printf("Очікуйте ваше замовлення в %d відділенні!\n", department);
+
+        totalPlusDelivery = total+50;
+                    printf("\nДо сплати: %d\n", totalPlusDelivery);
+                    printf("Оберіть метод оплати:\n");
+printf("1 - Оплата при отриманні\n");
+printf("2 - Оплатити онлайн\n");
+scanf("%d", &payChoice);
+                    switch (payChoice) {
+    case 1:
+        printf("Добре, очікуйте на доставку!\n");
         break;
+    case 2:
+        printf("Будь ласка, введіть дані вашої картки.\n");
+        printf("Номер:\n");
+        scanf("%d", &cardNumber);
+        printf("Термін дії:\n");
+        scanf("%d", &cardDate);
+        printf("CVV:\n");
+        scanf("%d", &cardCVV);
+        printf("Оплачено! Очікуйте на доставку!\n");
+        break;
+    default:
+        printf("Невірне значення. \n");
+        break;
+}     
+break;
+
     default:
         printf("Невірне значення.\n");
         break;
