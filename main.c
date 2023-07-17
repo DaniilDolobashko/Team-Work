@@ -98,69 +98,493 @@ int main() {
 
     int productId, quantity;
 
-    Product inventoryOfPhones[5];
-    int countPhones = 5;
+    Product inventoryOfPhones[30];
+    int countPhones = 30;
 
     inventoryOfPhones[0].id = 1;
-    strcpy(inventoryOfPhones[0].brand, "Xiaomi");
-    strcpy(inventoryOfPhones[0].name, "Телефон 1");
+    strcpy(inventoryOfPhones[0].brand, "Apple");
+    strcpy(inventoryOfPhones[0].name, "Iphone 14");
     inventoryOfPhones[0].memory = 128;
-    inventoryOfPhones[0].price = 100.0;
+    inventoryOfPhones[0].price = 33499;
 
 
     inventoryOfPhones[1].id = 2;
-    strcpy(inventoryOfPhones[1].brand, "Samsung");
-    strcpy(inventoryOfPhones[1].name, "Телефон 2");
+    strcpy(inventoryOfPhones[1].brand, "Apple");
+    strcpy(inventoryOfPhones[1].name, "Iphone 14 Pro");
     inventoryOfPhones[1].memory = 128;
-    inventoryOfPhones[1].price = 200.0;
+    inventoryOfPhones[1].price = 49999;
 
     inventoryOfPhones[2].id = 3;
-    strcpy(inventoryOfPhones[2].brand, "Xiaomi");
-    strcpy(inventoryOfPhones[2].name, "Телефон 3");
-    inventoryOfPhones[2].memory = 64;
-    inventoryOfPhones[2].price = 150.0;
+    strcpy(inventoryOfPhones[2].brand, "Apple");
+    strcpy(inventoryOfPhones[2].name, "Iphone 14 Pro Max");
+    inventoryOfPhones[2].memory = 128;
+    inventoryOfPhones[2].price = 54999;
 
     inventoryOfPhones[3].id = 4;
     strcpy(inventoryOfPhones[3].brand, "Apple");
-    strcpy(inventoryOfPhones[3].name, "Телефон 4");
-    inventoryOfPhones[3].memory = 256;
-    inventoryOfPhones[3].price = 400.0;
+    strcpy(inventoryOfPhones[3].name, "Iphone 14 Plus");
+    inventoryOfPhones[3].memory = 128;
+    inventoryOfPhones[3].price = 43999;
 
     inventoryOfPhones[4].id = 5;
-    strcpy(inventoryOfPhones[4].brand, "Xiaomi");
-    strcpy(inventoryOfPhones[4].name, "Телефон 5");
-    
-inventoryOfPhones[4].memory = 128;
-inventoryOfPhones[4].price = 250.0;
-Product inventoryOfChargers[1];
-int countChargers = 1;
+    strcpy(inventoryOfPhones[4].brand, "Apple");
+    strcpy(inventoryOfPhones[4].name, "Iphone 13");
+    inventoryOfPhones[4].memory = 128;
+    inventoryOfPhones[4].price = 33499;
 
-inventoryOfChargers[0].id = 6;
-strcpy(inventoryOfChargers[0].brand, "Xiaomi");
+    inventoryOfPhones[5].id = 6;
+    strcpy(inventoryOfPhones[5].brand, "Apple");
+    strcpy(inventoryOfPhones[5].name, "Iphone 11");
+    inventoryOfPhones[5].memory = 64;
+    inventoryOfPhones[5].price = 20499;
+
+    inventoryOfPhones[6].id = 7;
+    strcpy(inventoryOfPhones[6].brand, "Xiaomi");
+    strcpy(inventoryOfPhones[6].name, "Redmi Note 12 Pro 4G");
+    inventoryOfPhones[6].memory = 256;
+    inventoryOfPhones[6].price = 11999;
+
+    inventoryOfPhones[7].id = 8;
+    strcpy(inventoryOfPhones[7].brand, "Xiaomi");
+    strcpy(inventoryOfPhones[7].name, "12 Lite");
+    inventoryOfPhones[7].memory = 128;
+    inventoryOfPhones[7].price = 13499;
+
+    inventoryOfPhones[8].id = 9;
+    strcpy(inventoryOfPhones[8].brand, "Xiaomi");
+    strcpy(inventoryOfPhones[8].name, "Redmi 12C");
+    inventoryOfPhones[8].memory = 128;
+    inventoryOfPhones[8].price = 5599;
+
+    inventoryOfPhones[9].id = 10;
+    strcpy(inventoryOfPhones[9].brand, "Xiaomi");
+    strcpy(inventoryOfPhones[9].name, "Redmi A2");
+    inventoryOfPhones[9].memory = 32;
+    inventoryOfPhones[9].price = 3499;
+
+    inventoryOfPhones[10].id = 11;
+    strcpy(inventoryOfPhones[10].brand, "Xiaomi");
+    strcpy(inventoryOfPhones[10].name, "13 Lite");
+    inventoryOfPhones[10].memory = 256;
+    inventoryOfPhones[10].price = 17999;
+
+    inventoryOfPhones[11].id = 12;
+    strcpy(inventoryOfPhones[11].brand, "Xiaomi");
+    strcpy(inventoryOfPhones[11].name, "Redmi 10");
+    inventoryOfPhones[11].memory = 128;
+    inventoryOfPhones[11].price = 5599;
+
+    inventoryOfPhones[12].id = 13;
+    strcpy(inventoryOfPhones[12].brand, "Samsung");
+    strcpy(inventoryOfPhones[12].name, "Galaxy A24");
+    inventoryOfPhones[12].memory = 128;
+    inventoryOfPhones[12].price = 8999;
+
+    inventoryOfPhones[13].id = 14;
+    strcpy(inventoryOfPhones[13].brand, "Samsung");
+    strcpy(inventoryOfPhones[13].name, "Galaxy S23");
+    inventoryOfPhones[13].memory = 128;
+    inventoryOfPhones[13].price = 33999;
+
+    inventoryOfPhones[14].id = 15;
+    strcpy(inventoryOfPhones[14].brand, "Samsung");
+    strcpy(inventoryOfPhones[14].name, "Galaxy A54");
+    inventoryOfPhones[14].memory = 128;
+    inventoryOfPhones[14].price = 17699;
+
+    inventoryOfPhones[15].id = 16;
+    strcpy(inventoryOfPhones[15].brand, "Samsung");
+    strcpy(inventoryOfPhones[15].name, "Galaxy Fold 4");
+    inventoryOfPhones[15].memory = 512;
+    inventoryOfPhones[15].price = 58499;
+
+    inventoryOfPhones[16].id = 17;
+    strcpy(inventoryOfPhones[16].brand, "Samsung");
+    strcpy(inventoryOfPhones[16].name, "Galaxy S23 Ultra");
+    inventoryOfPhones[16].memory = 256;
+    inventoryOfPhones[16].price = 50999;
+
+    inventoryOfPhones[17].id = 18;
+    strcpy(inventoryOfPhones[17].brand, "Samsung");
+    strcpy(inventoryOfPhones[17].name, "Galaxy M14");
+    inventoryOfPhones[17].memory = 128;
+    inventoryOfPhones[17].price = 8499;
+
+    inventoryOfPhones[18].id = 19;
+    strcpy(inventoryOfPhones[18].brand, "Realme");
+    strcpy(inventoryOfPhones[18].name, "10");
+    inventoryOfPhones[18].memory = 128;
+    inventoryOfPhones[18].price = 9499;
+
+    inventoryOfPhones[19].id = 20;
+    strcpy(inventoryOfPhones[19].brand, "Realme");
+    strcpy(inventoryOfPhones[19].name, "C55");
+    inventoryOfPhones[19].memory = 256;
+    inventoryOfPhones[19].price = 8299;
+
+    inventoryOfPhones[20].id = 21;
+    strcpy(inventoryOfPhones[20].brand, "Realme");
+    strcpy(inventoryOfPhones[20].name, "10 Pro Plus 5G");
+    inventoryOfPhones[20].memory = 256;
+    inventoryOfPhones[20].price = 16999;
+
+    inventoryOfPhones[21].id = 22;
+    strcpy(inventoryOfPhones[21].brand, "Realme");
+    strcpy(inventoryOfPhones[21].name, "9i");
+    inventoryOfPhones[21].memory = 64;
+    inventoryOfPhones[21].price = 5499;
+
+    inventoryOfPhones[22].id = 23;
+    strcpy(inventoryOfPhones[22].brand, "Realme");
+    strcpy(inventoryOfPhones[22].name, "C30s");
+    inventoryOfPhones[22].memory = 64;
+    inventoryOfPhones[22].price = 3999;
+
+    inventoryOfPhones[23].id = 24;
+    strcpy(inventoryOfPhones[23].brand, "Realme");
+    strcpy(inventoryOfPhones[23].name, "GT Neo 5 SE 5G");
+    inventoryOfPhones[23].memory = 512;
+    inventoryOfPhones[23].price = 19499;
+
+    inventoryOfPhones[24].id = 25;
+    strcpy(inventoryOfPhones[24].brand, "Oppo");
+    strcpy(inventoryOfPhones[24].name, "A96");
+    inventoryOfPhones[24].memory = 128;
+    inventoryOfPhones[24].price = 9299;
+
+    inventoryOfPhones[25].id = 26;
+    strcpy(inventoryOfPhones[25].brand, "Oppo");
+    strcpy(inventoryOfPhones[25].name, "A17");
+    inventoryOfPhones[25].memory = 64;
+    inventoryOfPhones[25].price = 5299;
+
+    inventoryOfPhones[26].id = 27;
+    strcpy(inventoryOfPhones[26].brand, "Oppo");
+    strcpy(inventoryOfPhones[26].name, "A54s");
+    inventoryOfPhones[26].memory = 128;
+    inventoryOfPhones[26].price = 7299;
+
+    inventoryOfPhones[27].id = 28;
+    strcpy(inventoryOfPhones[27].brand, "Oppo");
+    strcpy(inventoryOfPhones[27].name, "Reno8 T");
+    inventoryOfPhones[27].memory = 128;
+    inventoryOfPhones[27].price = 13999;
+
+    inventoryOfPhones[28].id = 29;
+    strcpy(inventoryOfPhones[28].brand, "Oppo");
+    strcpy(inventoryOfPhones[28].name, "A98");
+    inventoryOfPhones[28].memory = 256;
+    inventoryOfPhones[28].price = 15799;
+
+    inventoryOfPhones[29].id = 30;
+    strcpy(inventoryOfPhones[29].brand, "Oppo");
+    strcpy(inventoryOfPhones[29].name, "A74");
+    inventoryOfPhones[29].memory = 128;
+    inventoryOfPhones[29].price = 13499;
+
+
+ 
+Product inventoryOfChargers[10];
+int countChargers = 10;
+
+inventoryOfChargers[0].id = 31;
+strcpy(inventoryOfChargers[0].brand, "Duracell");
 strcpy(inventoryOfChargers[0].name, "Швидкий шнур");
-strcpy(inventoryOfChargers[0].connector, "Type C");
+strcpy(inventoryOfChargers[0].connector, "USB-C");
 inventoryOfChargers[0].leigth = 1;
-inventoryOfChargers[0].price = 50.0;
+inventoryOfChargers[0].price = 599;
+
+inventoryOfChargers[1].id = 32;
+strcpy(inventoryOfChargers[1].brand, "Baseus");
+strcpy(inventoryOfChargers[1].name, "Cafule Cable");
+strcpy(inventoryOfChargers[1].connector, "Type-C 3A");
+inventoryOfChargers[1].leigth = 1;
+inventoryOfChargers[1].price = 189;
+
+inventoryOfChargers[2].id = 33;
+strcpy(inventoryOfChargers[2].brand, "Baseus");
+strcpy(inventoryOfChargers[2].name, "Cafule Cable");
+strcpy(inventoryOfChargers[2].connector, "Lightning");
+inventoryOfChargers[2].leigth = 1.5;
+inventoryOfChargers[2].price = 219;
+
+inventoryOfChargers[3].id = 34;
+strcpy(inventoryOfChargers[3].brand, "Grand-X");
+strcpy(inventoryOfChargers[3].name, "Cable");
+strcpy(inventoryOfChargers[3].connector, "Type-C 3A");
+inventoryOfChargers[3].leigth = 1;
+inventoryOfChargers[3].price = 99;
+
+inventoryOfChargers[4].id = 35;
+strcpy(inventoryOfChargers[4].brand, "Baseus");
+strcpy(inventoryOfChargers[4].name, "Cafuke Cable Type-C 3A");
+strcpy(inventoryOfChargers[4].connector, "Type-C 3A");
+inventoryOfChargers[4].leigth = 2;
+inventoryOfChargers[4].price = 230;
+
+inventoryOfChargers[5].id = 36;
+strcpy(inventoryOfChargers[5].brand, "Apple");
+strcpy(inventoryOfChargers[5].name, "Cable USB");
+strcpy(inventoryOfChargers[5].connector, "Lightning");
+inventoryOfChargers[5].leigth = 1;
+inventoryOfChargers[5].price = 999;
+
+inventoryOfChargers[6].id = 37;
+strcpy(inventoryOfChargers[6].brand, "Apple");
+strcpy(inventoryOfChargers[6].name, "Cable USB-C");
+strcpy(inventoryOfChargers[6].connector, "Lightning");
+inventoryOfChargers[6].leigth = 1;
+inventoryOfChargers[6].price = 999;
+
+inventoryOfChargers[7].id = 38;
+strcpy(inventoryOfChargers[7].brand, "Apple");
+strcpy(inventoryOfChargers[7].name, "Cable USB-C");
+strcpy(inventoryOfChargers[7].connector, "USB-C");
+inventoryOfChargers[7].leigth = 2;
+inventoryOfChargers[7].price = 999;
+
+inventoryOfChargers[8].id = 39;
+strcpy(inventoryOfChargers[8].brand, "ArmorStandart");
+strcpy(inventoryOfChargers[8].name, "AR88");
+strcpy(inventoryOfChargers[8].connector, "Type-C 2.4 A");
+inventoryOfChargers[8].leigth = 1;
+inventoryOfChargers[8].price = 179;
+
+inventoryOfChargers[9].id = 40;
+strcpy(inventoryOfChargers[9].brand, "Intaleo");
+strcpy(inventoryOfChargers[9].name, "CBFLEXL1");
+strcpy(inventoryOfChargers[9].connector, "Lightning");
+inventoryOfChargers[9].leigth = 1.2;
+inventoryOfChargers[9].price = 179;
+
+Product inventoryOfCase[30];
+int countCase = 30;
+
+inventoryOfCase[0].id = 41;
+strcpy(inventoryOfCase[0].brand, "Apple");
+strcpy(inventoryOfCase[0].name, "MagSafe Silicone Case");
+strcpy(inventoryOfCase[0].compatibility, "Iphone 14"); 
+inventoryOfCase[0].price = 2799;
+
+inventoryOfCase[1].id = 42;
+strcpy(inventoryOfCase[1].brand, "Apple");
+strcpy(inventoryOfCase[1].name, "MagSafe Silicone Case");
+strcpy(inventoryOfCase[1].compatibility, "Iphone 14 Pro"); 
+inventoryOfCase[1].price = 2799;
+
+inventoryOfCase[2].id = 43;
+strcpy(inventoryOfCase[2].brand, "Apple");
+strcpy(inventoryOfCase[2].name, "MagSafe Silicone Case");
+strcpy(inventoryOfCase[2].compatibility, "Iphone 14 Pro Max"); 
+inventoryOfCase[2].price = 3099;
+
+inventoryOfCase[3].id = 44;
+strcpy(inventoryOfCase[3].brand, "Apple");
+strcpy(inventoryOfCase[3].name, "MagSafe Clear Case");
+strcpy(inventoryOfCase[3].compatibility, "Iphone 14 Plus"); 
+inventoryOfCase[3].price = 2799;
+
+inventoryOfCase[4].id = 45;
+strcpy(inventoryOfCase[4].brand, "Apple");
+strcpy(inventoryOfCase[4].name, "MagSafe Clear Case");
+strcpy(inventoryOfCase[4].compatibility, "Iphone 13"); 
+inventoryOfCase[4].price = 2499;
+
+inventoryOfCase[5].id = 46;
+strcpy(inventoryOfCase[5].brand, "ArmorStandart");
+strcpy(inventoryOfCase[5].name, "Icon2 Case");
+strcpy(inventoryOfCase[5].compatibility, "Iphone 11"); 
+inventoryOfCase[5].price = 499;
+
+inventoryOfCase[6].id = 47;
+strcpy(inventoryOfCase[6].brand, "ArmorStandart");
+strcpy(inventoryOfCase[6].name, "Air Force");
+strcpy(inventoryOfCase[6].compatibility, "Xiaomi Redmi Note 12 Pro 4G"); 
+inventoryOfCase[6].price = 167;
+
+inventoryOfCase[7].id = 48;
+strcpy(inventoryOfCase[7].brand, "BeCover");
+strcpy(inventoryOfCase[7].name, "Anti-Shock");
+strcpy(inventoryOfCase[7].compatibility, "Xiaomi 12 Lite"); 
+inventoryOfCase[7].price = 149;
+
+inventoryOfCase[8].id = 49;
+strcpy(inventoryOfCase[8].brand, "ArmorStandart");
+strcpy(inventoryOfCase[8].name, "G-Case");
+strcpy(inventoryOfCase[8].compatibility, "Xiaomi Redmi 12C"); 
+inventoryOfCase[8].price = 269;
+
+inventoryOfCase[9].id = 50;
+strcpy(inventoryOfCase[9].brand, "BeCover");
+strcpy(inventoryOfCase[9].name, "Sniver Case");
+strcpy(inventoryOfCase[9].compatibility, "Xiaomi Redmi A2"); 
+inventoryOfCase[9].price = 249;
+
+inventoryOfCase[10].id = 51;
+strcpy(inventoryOfCase[10].brand, "BeCover");
+strcpy(inventoryOfCase[10].name, "Case");
+strcpy(inventoryOfCase[10].compatibility, "Xiaomi 13 Lite"); 
+inventoryOfCase[10].price = 149;
+
+inventoryOfCase[11].id = 52;
+strcpy(inventoryOfCase[11].brand, "ArmorStandart");
+strcpy(inventoryOfCase[11].name, "G-Case");
+strcpy(inventoryOfCase[11].compatibility, "Xiaomi Redmi 10"); 
+inventoryOfCase[11].price = 269;
+
+inventoryOfCase[12].id = 53;
+strcpy(inventoryOfCase[12].brand, "ArmorStandart");
+strcpy(inventoryOfCase[12].name, "Icon Case");
+strcpy(inventoryOfCase[12].compatibility, "Samsung Galaxy A24"); 
+inventoryOfCase[12].price = 349;
+
+inventoryOfCase[13].id = 54;
+strcpy(inventoryOfCase[13].brand, "Rugget");
+strcpy(inventoryOfCase[13].name, "Gadget Cover");
+strcpy(inventoryOfCase[13].compatibility, "Samsung Galaxy S23"); 
+inventoryOfCase[13].price = 2599;
+
+inventoryOfCase[14].id = 55;
+strcpy(inventoryOfCase[14].brand, "ArmorStandart");
+strcpy(inventoryOfCase[14].name, "Icon Case");
+strcpy(inventoryOfCase[14].compatibility, "Samsung Galaxy A54"); 
+inventoryOfCase[14].price = 349;
+
+inventoryOfCase[15].id = 56;
+strcpy(inventoryOfCase[15].brand, "Clear");
+strcpy(inventoryOfCase[15].name, "Edge Cover");
+strcpy(inventoryOfCase[15].compatibility, "Samsung Galaxy Fold 4"); 
+inventoryOfCase[15].price = 1849;
+
+inventoryOfCase[16].id = 57;
+strcpy(inventoryOfCase[16].brand, "Samsung");
+strcpy(inventoryOfCase[16].name, "Leather Cover");
+strcpy(inventoryOfCase[16].compatibility, "Samsung Galaxy S23 Ultra"); 
+inventoryOfCase[16].price = 2599;
+
+inventoryOfCase[17].id = 58;
+strcpy(inventoryOfCase[17].brand, "ArmorStandart");
+strcpy(inventoryOfCase[17].name, "Icon Case");
+strcpy(inventoryOfCase[17].compatibility, "Samsung Galaxy M14"); 
+inventoryOfCase[17].price = 349;
+
+inventoryOfCase[18].id = 59;
+strcpy(inventoryOfCase[18].brand, "Dux Ducis");
+strcpy(inventoryOfCase[18].name, "Skin Pro");
+strcpy(inventoryOfCase[18].compatibility, "Realme 10"); 
+inventoryOfCase[18].price = 329;
+
+inventoryOfCase[19].id = 60;
+strcpy(inventoryOfCase[19].brand, "UniCase");
+strcpy(inventoryOfCase[19].name, "Carbon");
+strcpy(inventoryOfCase[19].compatibility, "Realme C55"); 
+inventoryOfCase[19].price = 199;
+
+inventoryOfCase[20].id = 61;
+strcpy(inventoryOfCase[20].brand, "Deexe");
+strcpy(inventoryOfCase[20].name, "Leather Cover");
+strcpy(inventoryOfCase[20].compatibility, "Realme 10 Pro Plus 5G"); 
+inventoryOfCase[20].price = 219;
+
+inventoryOfCase[21].id = 62;
+strcpy(inventoryOfCase[21].brand, "Nillkin");
+strcpy(inventoryOfCase[21].name, "Frosted Shield");
+strcpy(inventoryOfCase[21].compatibility, "Realme 9i"); 
+inventoryOfCase[21].price = 319;
+
+inventoryOfCase[22].id = 63;
+strcpy(inventoryOfCase[22].brand, "ArmorStandart");
+strcpy(inventoryOfCase[22].name, "G-Case");
+strcpy(inventoryOfCase[22].compatibility, "Realme C30s"); 
+inventoryOfCase[22].price = 269;
+
+inventoryOfCase[23].id = 64;
+strcpy(inventoryOfCase[23].brand, "ArmorStandart");
+strcpy(inventoryOfCase[23].name, "Icon Case");
+strcpy(inventoryOfCase[23].compatibility, "Realme GT Neo 5 SE 5G"); 
+inventoryOfCase[23].price = 349;
+
+inventoryOfCase[24].id = 65;
+strcpy(inventoryOfCase[24].brand, "ColorWay");
+strcpy(inventoryOfCase[24].name, "TPU AntiShock");
+strcpy(inventoryOfCase[24].compatibility, "Oppo A96"); 
+inventoryOfCase[24].price = 129;
+
+inventoryOfCase[25].id = 66;
+strcpy(inventoryOfCase[25].brand, "ArmorStandart");
+strcpy(inventoryOfCase[25].name, "Matte Slim Fit");
+strcpy(inventoryOfCase[25].compatibility, "Oppo A17"); 
+inventoryOfCase[25].price = 199;
+
+inventoryOfCase[26].id = 67;
+strcpy(inventoryOfCase[26].brand, "BeCover");
+strcpy(inventoryOfCase[26].name, "Anti-Shock");
+strcpy(inventoryOfCase[26].compatibility, "Oppo A54s"); 
+inventoryOfCase[26].price = 149;
+
+inventoryOfCase[27].id = 68;
+strcpy(inventoryOfCase[27].brand, "ArmorStandart");
+strcpy(inventoryOfCase[27].name, "Air Series");
+strcpy(inventoryOfCase[27].compatibility, "Oppo Reno8 T"); 
+inventoryOfCase[27].price = 199;
+
+inventoryOfCase[28].id = 69;
+strcpy(inventoryOfCase[28].brand, "ColorWay");
+strcpy(inventoryOfCase[28].name, "Simple Book");
+strcpy(inventoryOfCase[28].compatibility, "Oppo A98"); 
+inventoryOfCase[28].price = 349;
+
+inventoryOfCase[29].id = 70;
+strcpy(inventoryOfCase[29].brand, "ArmorStandart");
+strcpy(inventoryOfCase[29].name, "Icon Case");
+strcpy(inventoryOfCase[29].compatibility, "Oppo A74"); 
+inventoryOfCase[29].price = 239;
 
 
-Product inventoryOfCase[1];
-int countCase = 1;
+Product inventoryOfPowerBank[7];
+int countPowerBank = 7;
 
-inventoryOfCase[0].id = 7;
-strcpy(inventoryOfCase[0].brand, "Xiaomi");
-strcpy(inventoryOfCase[0].name, "Super Case");
-strcpy(inventoryOfCase[0].compatibility, "Телефон 2"); 
-inventoryOfCase[0].price = 20.0;
+inventoryOfPowerBank[0].id = 71;
+strcpy(inventoryOfPowerBank[0].brand, "Apple");
+strcpy(inventoryOfPowerBank[0].name, "MagSafe Battery Pack");
+inventoryOfPowerBank[0].speed = 5;
+inventoryOfPowerBank[0].price = 4299;
 
+inventoryOfPowerBank[1].id = 72;
+strcpy(inventoryOfPowerBank[1].brand, "Xiaomi");
+strcpy(inventoryOfPowerBank[1].name, "Mi Power Bank 20000");
+inventoryOfPowerBank[1].speed = 22.5;
+inventoryOfPowerBank[1].price = 2499;
 
-Product inventoryOfPowerBank[1];
-int countPowerBank = 1;
+inventoryOfPowerBank[2].id = 73;
+strcpy(inventoryOfPowerBank[2].brand, "Samsung");
+strcpy(inventoryOfPowerBank[2].name, "EB-P5300 20000");
+inventoryOfPowerBank[2].speed = 25;
+inventoryOfPowerBank[2].price = 2499;
 
-inventoryOfPowerBank[0].id = 8;
-strcpy(inventoryOfPowerBank[0].brand, "Xiaomi");
-strcpy(inventoryOfPowerBank[0].name, "Супер фаст чардж");
-inventoryOfPowerBank[0].speed = 18;
-inventoryOfPowerBank[0].price = 80.0;
+inventoryOfPowerBank[3].id = 74;
+strcpy(inventoryOfPowerBank[3].brand, "Baseus");
+strcpy(inventoryOfPowerBank[3].name, "Bipow 10000");
+inventoryOfPowerBank[3].speed = 15;
+inventoryOfPowerBank[3].price = 599;
+
+inventoryOfPowerBank[4].id = 75;
+strcpy(inventoryOfPowerBank[4].brand, "Xiaomi");
+strcpy(inventoryOfPowerBank[4].name, "Mi Power Bank 3 20000");
+inventoryOfPowerBank[4].speed = 18;
+inventoryOfPowerBank[4].price = 799;
+
+inventoryOfPowerBank[5].id = 76;
+strcpy(inventoryOfPowerBank[5].brand, "Hama");
+strcpy(inventoryOfPowerBank[5].name, "PD-10HD 10000");
+inventoryOfPowerBank[5].speed = 15;
+inventoryOfPowerBank[5].price = 899;
+
+inventoryOfPowerBank[6].id = 77;
+strcpy(inventoryOfPowerBank[6].brand, "Promate");
+strcpy(inventoryOfPowerBank[6].name, "Bolt-20");
+inventoryOfPowerBank[6].speed = 10;
+inventoryOfPowerBank[6].price = 1399;
 
 
 
