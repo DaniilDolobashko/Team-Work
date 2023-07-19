@@ -1078,7 +1078,370 @@ do {
     printf("6. Повернутись назад\n");
     printf("\nВаш вибір: ");
     scanf("%d", &choiceOfCategory);
-    } while (choiceOfCategory != 6);
+
+    switch (choiceOfCategory) {
+        case 1:
+            int choiceOfFilter;
+            do {
+                printf("\nОберіть фільтр для смартфонів:\n");
+                printf("1. За брендом\n");
+                printf("2. За пам'ятю\n");
+                printf("3. За ціною\n");
+                printf("4. Додати товар до корзини\n");
+                printf("5. Повернутись до вибору категорії товару\n");
+                printf("\nВаш вибір: ");
+                scanf("%d", &choiceOfFilter);
+
+                switch (choiceOfFilter) {
+                    case 1:
+                        filterForPhonesByBrand(inventoryOfPhones, countPhones);
+                        break;
+                    case 2:
+                        filterForPhonesByMemory(inventoryOfPhones, countPhones);
+                        break;
+                    case 3:
+                        filterForPhonesByPrice(inventoryOfPhones, countPhones);
+                        break;
+                    case 4:
+                    printf("\nВведіть ID продукту: ");
+            scanf("%d", &productId);
+            printf("Введіть кількість: ");
+            scanf("%d", &quantity);
+
+            int found = 0;
+            for (int i = 0; i < countPhones; i++) {
+                if (inventoryOfPhones[i].id == productId) {
+                    addToCart(&inventoryOfPhones[i], quantity, cart, &cartSize);
+                    addSumCart(&inventoryOfPhones[i], quantity, &total);
+                    found = 1;
+                    break;
+                }
+            }
+            for (int i = 0; i < countChargers; i++) {
+                if (inventoryOfChargers[i].id == productId) {
+                    addToCart(&inventoryOfChargers[i], quantity, cart, &cartSize);
+                    addSumCart(&inventoryOfChargers[i], quantity, &total);
+                    found = 1;
+                    break;
+                }
+            }
+            for (int i = 0; i < countCase; i++) {
+                if (inventoryOfCase[i].id == productId) {
+                    addToCart(&inventoryOfCase[i], quantity, cart, &cartSize);
+                    addSumCart(&inventoryOfCase[i], quantity, &total);
+                    found = 1;
+                    break;
+                }
+            }
+            for (int i = 0; i < countPowerBank; i++) {
+                if (inventoryOfPowerBank[i].id == productId) {
+                    addToCart(&inventoryOfPowerBank[i], quantity, cart, &cartSize);
+                    addSumCart(&inventoryOfPowerBank[i], quantity, &total);
+                    found = 1;
+                    break;
+                }
+            }
+
+            if (!found) {
+                printf("\nПродукт з ID %d не знайдено\n", productId);
+            }
+            break;
+                    case 5:
+                        printf("\nПовертаємось до вибору категорії товару\n");
+                        break;
+                    default:
+                        printf("\nНевірний вибір фільтра. Спробуйте ще раз.\n");
+                        break;
+                }
+            } while (choiceOfFilter != 5);
+            break;
+        
+        case 2:
+    int choiceOfFilter1;
+    do {
+        printf("\nОберіть фільтр для зарядних пристроїв:\n");
+        printf("1. За брендом\n");
+        printf("2. За конектором\n");
+        printf("3. За довжиною\n");
+        printf("4. За ціною\n");
+        printf("5. Додати товар до корзини\n");
+        printf("6. Повернутись до вибору категорії товару\n");
+        printf("\nВаш вибір: ");
+        scanf("%d", &choiceOfFilter1);
+
+        switch (choiceOfFilter1) {
+            case 1:
+                filterForChargersByBrand(inventoryOfChargers, countChargers);
+                break;
+            case 2:
+                filterForChargersByConnector(inventoryOfChargers, countChargers);
+                break;
+            case 3:
+                filterForChargersByLength(inventoryOfChargers, countChargers);
+                break;
+            case 4:
+                filterForChargersByPrice(inventoryOfChargers, countChargers);
+                break;
+            case 5:
+                printf("\nВведіть ID продукту: ");
+            scanf("%d", &productId);
+            printf("Введіть кількість: ");
+            scanf("%d", &quantity);
+
+            int found = 0;
+            for (int i = 0; i < countPhones; i++) {
+                if (inventoryOfPhones[i].id == productId) {
+                    addToCart(&inventoryOfPhones[i], quantity, cart, &cartSize);
+                    addSumCart(&inventoryOfPhones[i], quantity, &total);
+                    found = 1;
+                    break;
+                }
+            }
+            for (int i = 0; i < countChargers; i++) {
+                if (inventoryOfChargers[i].id == productId) {
+                    addToCart(&inventoryOfChargers[i], quantity, cart, &cartSize);
+                    addSumCart(&inventoryOfChargers[i], quantity, &total);
+                    found = 1;
+                    break;
+                }
+            }
+            for (int i = 0; i < countCase; i++) {
+                if (inventoryOfCase[i].id == productId) {
+                    addToCart(&inventoryOfCase[i], quantity, cart, &cartSize);
+                    addSumCart(&inventoryOfCase[i], quantity, &total);
+                    found = 1;
+                    break;
+                }
+            }
+            for (int i = 0; i < countPowerBank; i++) {
+                if (inventoryOfPowerBank[i].id == productId) {
+                    addToCart(&inventoryOfPowerBank[i], quantity, cart, &cartSize);
+                    addSumCart(&inventoryOfPowerBank[i], quantity, &total);
+                    found = 1;
+                    break;
+                }
+            }
+
+            if (!found) {
+                printf("\nПродукт з ID %d не знайдено\n", productId);
+            }
+            break;
+            case 6:
+                printf("\nПовертаємося до вибору категорії товару\n");
+                break;
+            default:
+                printf("\nНевірний вибір фільтра. Спробуйте ще раз.\n");
+                break;
+        }
+    } while (choiceOfFilter1 != 6);
+    break;
+
+        case 3:
+    int choiceOfFilter2;
+    do {
+        printf("\nОберіть фільтр для чохлів:\n");
+        printf("1. За брендом\n");
+        printf("2. За сумісністю\n");
+        printf("3. За ціною\n");
+        printf("4. Додати товар до корзини\n");
+        printf("5. Повернутись до вибору категорії товару\n");
+        printf("\nВаш вибір: ");
+        scanf("%d", &choiceOfFilter2);
+
+        switch (choiceOfFilter2) {
+            case 1:
+                filterForCasesByBrand(inventoryOfCase, countCase);
+                break;
+            case 2:
+                filterForCasesByCompatibility(inventoryOfCase, countCase);
+                break;
+            case 3:
+                filterForCasesByPrice(inventoryOfCase, countCase);
+                break;
+            case 4:
+                printf("\nВведіть ID продукту: ");
+                scanf("%d", &productId);
+                printf("Введіть кількість: ");
+                scanf("%d", &quantity);
+
+                int found = 0;
+                for (int i = 0; i < countPhones; i++) {
+                    if (inventoryOfPhones[i].id == productId) {
+                        addToCart(&inventoryOfPhones[i], quantity, cart, &cartSize);
+                        addSumCart(&inventoryOfPhones[i], quantity, &total);
+                        found = 1;
+                        break;
+                    }
+                }
+                for (int i = 0; i < countChargers; i++) {
+                    if (inventoryOfChargers[i].id == productId) {
+                        addToCart(&inventoryOfChargers[i], quantity, cart, &cartSize);
+                        addSumCart(&inventoryOfChargers[i], quantity, &total);
+                        found = 1;
+                        break;
+                    }
+                }
+                for (int i = 0; i < countCase; i++) {
+                    if (inventoryOfCase[i].id == productId) {
+                        addToCart(&inventoryOfCase[i], quantity, cart, &cartSize);
+                        addSumCart(&inventoryOfCase[i], quantity, &total);
+                        found = 1;
+                        break;
+                    }
+                }
+                for (int i = 0; i < countPowerBank; i++) {
+                    if (inventoryOfPowerBank[i].id == productId) {
+                        addToCart(&inventoryOfPowerBank[i], quantity, cart, &cartSize);
+                        addSumCart(&inventoryOfPowerBank[i], quantity, &total);
+                        found = 1;
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    printf("\nПродукт з ID %d не знайдено\n", productId);
+                }
+                break;
+            case 5:
+                printf("\nПовертаємось до вибору категорії товару\n");
+                break;
+            default:
+                printf("\nНевірний вибір фільтра. Спробуйте ще раз.\n");
+                break;
+        }
+    } while (choiceOfFilter2 != 5);
+    break;
+
+        case 4:
+    int choiceOfFilter3;
+    do {
+        printf("\nОберіть фільтр для павербанків:\n");
+        printf("1. За брендом\n");
+        printf("2. За швидкістю\n");
+        printf("3. За ціною\n");
+        printf("4. Додати товар до корзини\n");
+        printf("5. Повернутись до вибору категорії товару\n");
+        printf("\nВаш вибір: ");
+        scanf("%d", &choiceOfFilter3);
+
+        switch (choiceOfFilter3) {
+            case 1:
+                filterForPowerBanksByBrand(inventoryOfPowerBank, countPowerBank);
+                break;
+            case 2:
+                filterForPowerBanksBySpeed(inventoryOfPowerBank, countPowerBank);
+                break;
+            case 3:
+                filterForPowerBanksByPrice(inventoryOfPowerBank, countPowerBank);
+                break;
+            case 4:
+                printf("\nВведіть ID продукту: ");
+                scanf("%d", &productId);
+                printf("Введіть кількість: ");
+                scanf("%d", &quantity);
+
+                int found = 0;
+                for (int i = 0; i < countPhones; i++) {
+                    if (inventoryOfPhones[i].id == productId) {
+                        addToCart(&inventoryOfPhones[i], quantity, cart, &cartSize);
+                        addSumCart(&inventoryOfPhones[i], quantity, &total);
+                        found = 1;
+                        break;
+                    }
+                }
+                for (int i = 0; i < countChargers; i++) {
+                    if (inventoryOfChargers[i].id == productId) {
+                        addToCart(&inventoryOfChargers[i], quantity, cart, &cartSize);
+                        addSumCart(&inventoryOfChargers[i], quantity, &total);
+                        found = 1;
+                        break;
+                    }
+                }
+                for (int i = 0; i < countCase; i++) {
+                    if (inventoryOfCase[i].id == productId) {
+                        addToCart(&inventoryOfCase[i], quantity, cart, &cartSize);
+                        addSumCart(&inventoryOfCase[i], quantity, &total);
+                        found = 1;
+                        break;
+                    }
+                }
+                for (int i = 0; i < countPowerBank; i++) {
+                    if (inventoryOfPowerBank[i].id == productId) {
+                        addToCart(&inventoryOfPowerBank[i], quantity, cart, &cartSize);
+                        addSumCart(&inventoryOfPowerBank[i], quantity, &total);
+                        found = 1;
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    printf("\nПродукт з ID %d не знайдено\n", productId);
+                }
+                break;
+            case 5:
+                printf("\nПовертаємось до вибору категорії товару\n");
+                break;
+            default:
+                printf("\nНевірний вибір фільтра. Спробуйте ще раз.\n");
+                break;
+        }
+    } while (choiceOfFilter3 != 5);
+    break;
+        
+        case 5:
+            printf("\nВведіть ID продукту: ");
+            scanf("%d", &productId);
+            printf("Введіть кількість: ");
+            scanf("%d", &quantity);
+
+            int found = 0;
+            for (int i = 0; i < countPhones; i++) {
+                if (inventoryOfPhones[i].id == productId) {
+                    addToCart(&inventoryOfPhones[i], quantity, cart, &cartSize);
+                    addSumCart(&inventoryOfPhones[i], quantity, &total);
+                    found = 1;
+                    break;
+                }
+            }
+            for (int i = 0; i < countChargers; i++) {
+                if (inventoryOfChargers[i].id == productId) {
+                    addToCart(&inventoryOfChargers[i], quantity, cart, &cartSize);
+                    addSumCart(&inventoryOfChargers[i], quantity, &total);
+                    found = 1;
+                    break;
+                }
+            }
+            for (int i = 0; i < countCase; i++) {
+                if (inventoryOfCase[i].id == productId) {
+                    addToCart(&inventoryOfCase[i], quantity, cart, &cartSize);
+                    addSumCart(&inventoryOfCase[i], quantity, &total);
+                    found = 1;
+                    break;
+                }
+            }
+            for (int i = 0; i < countPowerBank; i++) {
+                if (inventoryOfPowerBank[i].id == productId) {
+                    addToCart(&inventoryOfPowerBank[i], quantity, cart, &cartSize);
+                    addSumCart(&inventoryOfPowerBank[i], quantity, &total);
+                    found = 1;
+                    break;
+                }
+            }
+
+            if (!found) {
+                printf("\nПродукт з ID %d не знайдено\n", productId);
+            }
+            break;
+        case 6:
+            printf("\nВи повернулись до головного меню\n");
+            break;
+        default:
+            printf("\nНевірний вибір категорії. Спробуйте ще раз.\n");
+            break;
+    }
+} while (choiceOfCategory != 6);
+
+break;
                 
 case 3:
 displayCart(cart, cartSize);
