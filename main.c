@@ -202,6 +202,32 @@ void filterForChargersByBrand(Product inventoryOfChargers[], int numChargers) {
     }
 }
 
+void filterForChargersByConnector(Product inventoryOfChargers[], int numChargers) {
+    char connectorFilter[20];
+    printf("\nВведіть тип роз'єму: ");
+    scanf("%s", connectorFilter);
+
+    printf("\nРезультати після фільтрації за роз'ємом %s:\n", connectorFilter);
+
+    bool foundProducts = false;
+
+    for (int i = 0; i < numChargers; i++) {
+        if (strcmp(inventoryOfChargers[i].connector, connectorFilter) == 0) {
+            foundProducts = true;
+            printf("\nID: %d, Назва: %s %s, Довжина: %.0f m, Роз'єм: %s, Ціна: %.2f грн\n",
+                   inventoryOfChargers[i].id,
+                   inventoryOfChargers[i].brand,
+                   inventoryOfChargers[i].name,
+                   inventoryOfChargers[i].leigth,
+                   inventoryOfChargers[i].connector,
+                   inventoryOfChargers[i].price);
+        }
+    }
+
+    if (!foundProducts) {
+        printf("\nТоварів за фільтром роз'єму %s не знайдено.\n", connectorFilter);
+    }
+}
 
 
 int main() {
