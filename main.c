@@ -93,6 +93,31 @@ void listOfPowerBank(Product* inventoryOfPowerBank, int countPowerBank) {
     }
 }
 
+void filterForPhonesByBrand(Product inventoryOfPhones[], int numPhones) {
+    char brandFilter[20];
+    printf("\nВведіть назву бренду: ");
+    scanf("%s", brandFilter);
+
+    printf("\nРезультати після фільтрації за брендом %s:\n", brandFilter);
+
+    bool foundProducts = false;
+
+    for (int i = 0; i < numPhones; i++) {
+        if (strcmp(inventoryOfPhones[i].brand, brandFilter) == 0) {
+            foundProducts = true;
+            printf("\nID: %d, Назва: %s %s, Пам'ять: %.0f GB, Ціна: %.2f грн\n",
+                   inventoryOfPhones[i].id,
+                   inventoryOfPhones[i].brand,
+                   inventoryOfPhones[i].name,
+                   inventoryOfPhones[i].memory,
+                   inventoryOfPhones[i].price);
+        }
+    }
+
+    if (!foundProducts) {
+        printf("\nТоварів бренду за фільтром %s не знайдено.\n", brandFilter);
+    }
+}
 
 int main() {
 
