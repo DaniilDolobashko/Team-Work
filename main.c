@@ -313,6 +313,32 @@ void filterForCasesByBrand(Product inventoryOfCase[], int numCases) {
     }
 }
 
+void filterForCasesByCompatibility(Product inventoryOfCase[], int numCases) {
+    char compatibilityFilter[50];
+    printf("\nВведіть сумісність: ");
+    scanf("%s", compatibilityFilter);
+
+    printf("\nРезультати після фільтрації за сумісністю %s:\n", compatibilityFilter);
+
+    bool foundProducts = false;
+
+    for (int i = 0; i < numCases; i++) {
+        if (strcmp(inventoryOfCase[i].compatibility, compatibilityFilter) == 0) {
+            foundProducts = true;
+            printf("\nID: %d, Назва: %s %s, Сумісний з %s, Ціна: %.2f грн\n",
+                   inventoryOfCase[i].id,
+                   inventoryOfCase[i].brand,
+                   inventoryOfCase[i].name,
+                   inventoryOfCase[i].compatibility,
+                   inventoryOfCase[i].price);
+        }
+    }
+
+    if (!foundProducts) {
+        printf("\nТоварів за сумісністю %s не знайдено.\n", compatibilityFilter);
+    }
+}
+
 
 int main() {
 
