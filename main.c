@@ -1065,16 +1065,31 @@ do {
 }
 } while (choiceOfCategory != 5);
 break;
+
 case 2:
+
+do {
+    printf("\nОберіть категорію товару, яку хочете відфільтрувати\n");
+    printf("1. Смартфони\n");
+    printf("2. Зарядні пристрої\n");
+    printf("3. Чохли\n");
+    printf("4. Павербанки\n");
+    printf("5. Додати товар до корзини\n");
+    printf("6. Повернутись назад\n");
+    printf("\nВаш вибір: ");
+    scanf("%d", &choiceOfCategory);
+    } while (choiceOfCategory != 6);
+                
+case 3:
 displayCart(cart, cartSize);
 printf("Загальна вартість корзини: %.2f\n", total);
 break;
-case 3:
+case 4:
 printf("Введіть ID товару, який потрібно видалити з корзини: ");
 scanf("%d", &productId);
 removeFromCart(productId, cart, &cartSize, &total);
 break;
-case 4:
+case 5:
 printf("\nОФОРМЛЕННЯ ЗАМОВЛЕННЯ\n\n");
 printf("Оберіть метод доставки:\n");
 printf("1 - Самовивіз з магазину (Київ) - безкоштовно\n");
@@ -1217,7 +1232,7 @@ break;
                 
                 
 break;
-case 5:
+case 6:
 printf("Ви вийшли з меню\n");
 break;
 default:
