@@ -175,6 +175,34 @@ void filterForPhonesByPrice(Product inventoryOfPhones[], int numPhones) {
     }
 }
 
+void filterForChargersByBrand(Product inventoryOfChargers[], int numChargers) {
+    char brandFilter[20];
+    printf("\nВведіть назву бренду: ");
+    scanf("%s", brandFilter);
+
+    printf("\nРезультати після фільтрації за брендом %s:\n", brandFilter);
+
+    bool foundProducts = false;
+
+    for (int i = 0; i < numChargers; i++) {
+        if (strcmp(inventoryOfChargers[i].brand, brandFilter) == 0) {
+            foundProducts = true;
+            printf("\nID: %d, Назва: %s %s, Довжина: %.0f m, Роз'єм: %s, Ціна: %.2f грн\n",
+                   inventoryOfChargers[i].id,
+                   inventoryOfChargers[i].brand,
+                   inventoryOfChargers[i].name,
+                   inventoryOfChargers[i].leigth,
+                   inventoryOfChargers[i].connector,
+                   inventoryOfChargers[i].price);
+        }
+    }
+
+    if (!foundProducts) {
+        printf("\nТоварів бренду за фільтром %s не знайдено.\n", brandFilter);
+    }
+}
+
+
 
 int main() {
 
