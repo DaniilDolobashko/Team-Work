@@ -424,6 +424,35 @@ void filterForPowerBanksBySpeed(Product inventoryOfPowerBank[], int numPowerBank
 }
 
 
+void filterForPowerBanksByPrice(Product inventoryOfPowerBank[], int numPowerBanks) {
+    float minPrice, maxPrice;
+    printf("\nВведіть мінімальну ціну: ");
+    scanf("%f", &minPrice);
+    printf("Введіть максимальну ціну: ");
+    scanf("%f", &maxPrice);
+
+    printf("\nРезультати після фільтрації за ціною: %.2f грн - %.2f грн\n", minPrice, maxPrice);
+
+    bool foundProducts = false;
+
+    for (int i = 0; i < numPowerBanks; i++) {
+        if (inventoryOfPowerBank[i].price >= minPrice && inventoryOfPowerBank[i].price <= maxPrice) {
+            foundProducts = true;
+            printf("\nID: %d, Назва: %s %s, Швидкість: %.0f W, Ціна: %.2f грн\n",
+                   inventoryOfPowerBank[i].id,
+                   inventoryOfPowerBank[i].brand,
+                   inventoryOfPowerBank[i].name,
+                   inventoryOfPowerBank[i].speed,
+                   inventoryOfPowerBank[i].price);
+        }
+    }
+
+    if (!foundProducts) {
+        printf("\nТоварів за фільтром ціни %.2f грн - %.2f грн не знайдено.\n", minPrice, maxPrice);
+    }
+}
+
+
 int main() {
 
     int productId, quantity;
