@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 typedef struct {
     int id;
@@ -118,6 +119,37 @@ void filterForPhonesByBrand(Product inventoryOfPhones[], int numPhones) {
         printf("\nТоварів бренду за фільтром %s не знайдено.\n", brandFilter);
     }
 }
+
+void filterForPhonesByMemory(Product inventoryOfPhones[], int numPhones) {
+    float minMemory, maxMemory;
+    printf("\nВведіть мінімальний обсяг пам'яті: ");
+    scanf("%f", &minMemory);
+    printf("Введіть максимальний обсяг пам'яті: ");
+    scanf("%f", &maxMemory);
+
+    printf("\nРезультати після фільтрації за обсягом пам'яті %.0f GB - %.0f GB:\n", minMemory, maxMemory);
+
+    
+    bool foundProducts = false;
+
+    for (int i = 0; i < numPhones; i++) {
+        if (inventoryOfPhones[i].memory >= minMemory && inventoryOfPhones[i].memory <= maxMemory) {
+            foundProducts = true; 
+            printf("\nID: %d, Назва: %s %s, Пам'ять: %.0f GB, Ціна: %.2f грн\n",
+                   inventoryOfPhones[i].id,
+                   inventoryOfPhones[i].brand,
+                   inventoryOfPhones[i].name,
+                   inventoryOfPhones[i].memory,
+                   inventoryOfPhones[i].price);
+        }
+    }
+
+    
+    if (!foundProducts) {
+        printf("Товарів у заданому діапазоні пам'яті не знайдено.\n");
+    }
+}
+
 
 int main() {
 
