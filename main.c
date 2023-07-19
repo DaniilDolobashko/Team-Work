@@ -150,6 +150,31 @@ void filterForPhonesByMemory(Product inventoryOfPhones[], int numPhones) {
     }
 }
 
+void filterForPhonesByPrice(Product inventoryOfPhones[], int numPhones) {
+    float minPriceFilter, maxPriceFilter;
+    printf("\nВведіть мінімальну ціну: ");
+    scanf("%f", &minPriceFilter);
+    printf("Введіть максимальну ціну: ");
+    scanf("%f", &maxPriceFilter);
+
+    printf("\nРезультати після фільтрації за ціною %.2f грн - %.2f грн:\n", minPriceFilter, maxPriceFilter);
+
+    bool foundProducts = false;
+
+    for (int i = 0; i < numPhones; i++) {
+        if (inventoryOfPhones[i].price >= minPriceFilter && inventoryOfPhones[i].price <= maxPriceFilter) {
+            foundProducts = true;
+            printf("\nID: %d, Назва: %s %s, Пам'ять: %.0f GB, Ціна: %.2f грн\n",
+                inventoryOfPhones[i].id, inventoryOfPhones[i].brand, inventoryOfPhones[i].name,
+                inventoryOfPhones[i].memory, inventoryOfPhones[i].price);
+        }
+    }
+
+    if (!foundProducts) {
+        printf("\nТоварів за фільтром ціни %.2f грн - %.2f грн не знайдено.\n", minPriceFilter, maxPriceFilter);
+    }
+}
+
 
 int main() {
 
