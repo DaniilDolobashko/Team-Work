@@ -287,6 +287,31 @@ void filterForChargersByPrice(Product inventoryOfChargers[], int numChargers) {
     }
 }
 
+void filterForCasesByBrand(Product inventoryOfCase[], int numCases) {
+    char brandFilter[20];
+    printf("\nВведіть назву бренду: ");
+    scanf("%s", brandFilter);
+
+    printf("\nРезультати після фільтрації за брендом %s:\n", brandFilter);
+
+    bool foundProducts = false;
+
+    for (int i = 0; i < numCases; i++) {
+        if (strcmp(inventoryOfCase[i].brand, brandFilter) == 0) {
+            foundProducts = true;
+            printf("\nID: %d, Назва: %s %s, Сумісність: %s, Ціна: %.2f грн\n",
+                   inventoryOfCase[i].id,
+                   inventoryOfCase[i].brand,
+                   inventoryOfCase[i].name,
+                   inventoryOfCase[i].compatibility,
+                   inventoryOfCase[i].price);
+        }
+    }
+
+    if (!foundProducts) {
+        printf("\nТоварів бренду за фільтром %s не знайдено.\n", brandFilter);
+    }
+}
 
 
 int main() {
