@@ -340,6 +340,35 @@ void filterForCasesByCompatibility(Product inventoryOfCase[], int numCases) {
 }
 
 
+void filterForCasesByPrice(Product inventoryOfCase[], int numCases) {
+    float minPrice, maxPrice;
+    printf("\nВведіть мінімальну ціну: ");
+    scanf("%f", &minPrice);
+    printf("Введіть максимальну ціну: ");
+    scanf("%f", &maxPrice);
+
+    printf("\nРезультати після фільтрації за ціною:\n");
+
+    bool foundProducts = false;
+
+    for (int i = 0; i < numCases; i++) {
+        if (inventoryOfCase[i].price >= minPrice && inventoryOfCase[i].price <= maxPrice) {
+            foundProducts = true;
+            printf("\nID: %d, Назва: %s %s, Сумісність: %s, Ціна: %.2f грн\n",
+                   inventoryOfCase[i].id,
+                   inventoryOfCase[i].brand,
+                   inventoryOfCase[i].name,
+                   inventoryOfCase[i].compatibility,
+                   inventoryOfCase[i].price);
+        }
+    }
+
+    if (!foundProducts) {
+        printf("\nТоварів за фільтром ціни %0.2f - %0.2f грн не знайдено.\n", minPrice, maxPrice);
+    }
+}
+
+
 int main() {
 
     int productId, quantity;
