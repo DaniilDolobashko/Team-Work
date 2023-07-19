@@ -229,6 +229,35 @@ void filterForChargersByConnector(Product inventoryOfChargers[], int numChargers
     }
 }
 
+void filterForChargersByLength(Product inventoryOfChargers[], int numChargers) {
+    float minLenghtFilter, maxLenghtFilter;
+    printf("\nВведіть мінімальну довжину: ");
+    scanf("%f", &minLenghtFilter);
+    printf("Введіть максимальну довжину: ");
+    scanf("%f", &maxLenghtFilter);
+
+    printf("\nРезультати після фільтрації за довжиною %.2f m- %.2f m:\n", minLenghtFilter, maxLenghtFilter);
+
+    bool foundProducts = false;
+
+    for (int i = 0; i < numChargers; i++) {
+        if (inventoryOfChargers[i].leigth >= minLenghtFilter && inventoryOfChargers[i].leigth <= maxLenghtFilter) {
+            foundProducts = true;
+            printf("\nID: %d, Назва: %s %s, Довжина: %.0f m, Роз'єм: %s, Ціна: %.2f грн\n",
+                   inventoryOfChargers[i].id,
+                   inventoryOfChargers[i].brand,
+                   inventoryOfChargers[i].name,
+                   inventoryOfChargers[i].leigth,
+                   inventoryOfChargers[i].connector,
+                   inventoryOfChargers[i].price);
+        }
+    }
+
+    if (!foundProducts) {
+        printf("\nТоварів за фільтром довжини %.2f m- %.2f m не знайдено.\n", minLenghtFilter, maxLenghtFilter);
+    }
+}
+
 
 int main() {
 
