@@ -368,6 +368,33 @@ void filterForCasesByPrice(Product inventoryOfCase[], int numCases) {
     }
 }
 
+void filterForPowerBanksByBrand(Product inventoryOfPowerBank[], int numPowerBanks) {
+    char brandFilter[20];
+    printf("\nВведіть назву бренду: ");
+    scanf("%s", brandFilter);
+
+    printf("\nРезультати після фільтрації за брендом %s:\n", brandFilter);
+
+    bool foundProducts = false;
+
+    for (int i = 0; i < numPowerBanks; i++) {
+        if (strcmp(inventoryOfPowerBank[i].brand, brandFilter) == 0) {
+            foundProducts = true;
+            printf("\nID: %d, Назва: %s %s, Швидкість: %.0f W, Ціна: %.2f грн\n",
+                   inventoryOfPowerBank[i].id,
+                   inventoryOfPowerBank[i].brand,
+                   inventoryOfPowerBank[i].name,
+                   inventoryOfPowerBank[i].speed,
+                   inventoryOfPowerBank[i].price);
+        }
+    }
+
+    if (!foundProducts) {
+        printf("\nТоварів бренду за фільтром %s не знайдено.\n", brandFilter);
+    }
+}
+
+
 
 int main() {
 
