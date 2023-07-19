@@ -395,6 +395,34 @@ void filterForPowerBanksByBrand(Product inventoryOfPowerBank[], int numPowerBank
 }
 
 
+void filterForPowerBanksBySpeed(Product inventoryOfPowerBank[], int numPowerBanks) {
+    float minSpeed, maxSpeed;
+    printf("\nВведіть мінімальну швидкість: ");
+    scanf("%f", &minSpeed);
+    printf("Введіть максимальну швидкість: ");
+    scanf("%f", &maxSpeed);
+
+    printf("\nРезультати після фільтрації за швидкістю (%.0f - %.0f W):\n", minSpeed, maxSpeed);
+
+    bool foundProducts = false;
+
+    for (int i = 0; i < numPowerBanks; i++) {
+        if (inventoryOfPowerBank[i].speed >= minSpeed && inventoryOfPowerBank[i].speed <= maxSpeed) {
+            foundProducts = true;
+            printf("\nID: %d, Назва: %s %s, Швидкість: %.0f W, Ціна: %.2f грн\n",
+                   inventoryOfPowerBank[i].id,
+                   inventoryOfPowerBank[i].brand,
+                   inventoryOfPowerBank[i].name,
+                   inventoryOfPowerBank[i].speed,
+                   inventoryOfPowerBank[i].price);
+        }
+    }
+
+    if (!foundProducts) {
+        printf("\nТоварів у заданому діапазоні швидкості не знайдено.\n");
+    }
+}
+
 
 int main() {
 
